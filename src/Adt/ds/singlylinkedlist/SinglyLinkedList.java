@@ -24,6 +24,7 @@ public class SinglyLinkedList {
         first = newNode;
     }
 
+    // Not efficient because all items are traversed!
     public void insertLast(int data) {
         Node newNode = new Node();
         newNode.data = data;
@@ -43,6 +44,7 @@ public class SinglyLinkedList {
         return temp;
     }
 
+    @SuppressWarnings("Duplicates")
     public void displayList() {
         System.out.println("List (first ---> last)");
 
