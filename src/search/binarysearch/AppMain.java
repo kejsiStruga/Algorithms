@@ -15,7 +15,6 @@ public class AppMain {
         return -1;
     }
 
-
     public static int recursiveLinearSearch(int [] arr, int i, int x) {
         if(i >= arr.length) {
             return -1;
@@ -27,7 +26,26 @@ public class AppMain {
         }
     }
 
+    public static int recursiveBinarySearch(int p, int r, int [] arr, int x) {
+
+        int q = (p+r) / 2;
+
+        if(p>r) {
+            return -1;
+        }
+        else if(arr[q] > x) {
+            return recursiveBinarySearch(p, q+1, arr, x);
+        } else if(arr[q] < x) {
+            return recursiveBinarySearch(q+1, r, arr, x);
+        } else {
+            return q;
+        }
+    }
+
     public static void main(String[] args) {
-        System.out.println(recursiveLinearSearch(new int[] {1,2,3,4,5,6,7,8,9}, 0,5));
+//        System.out.println(binarySearch(new int[] {1,2,3,4,5,6,7,8,9}, 10));
+        int [] arr = {1,2,3,4,5,6,7,8,9};
+
+        System.out.println(recursiveBinarySearch(0, arr.length-1, arr, 10));
     }
 }
