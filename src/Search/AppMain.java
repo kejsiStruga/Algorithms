@@ -1,4 +1,4 @@
-package Search.binarysearch;
+package Search;
 
 import java.util.Arrays;
 
@@ -45,7 +45,6 @@ public class AppMain {
     }
 
     public static String selectionSort(int [] arr) {
-
         int min;
 
         for(int i = 0; i< arr.length-1; i++) {
@@ -63,12 +62,27 @@ public class AppMain {
         return Arrays.toString(arr);
     }
 
+    public static String insertionSort(int [] arr) {
+
+        for (int i=1; i<arr.length; i++) {
+            int element = arr[i];
+            int j = i-1;
+            while(j>=0 && arr[j] >element) {
+                arr[j+1] = arr[j];
+                j--;
+            }
+            arr[j+1] = element;
+        }
+        return Arrays.toString(arr);
+    }
+
     public static void main(String[] args) {
 //        System.out.println(binarySearch(new int[] {1,2,3,4,5,6,7,8,9}, 10));
 //        int [] arr = {1,2,3,4,5,6,7,8,9};
 //
 //        System.out.println(recursiveBinarySearch(0, arr.length-1, arr, 10));
 
-        System.out.println(selectionSort(new int[]{25, 47, 3, 19, 8, 18}));
+//        System.out.println(selectionSort(new int[]{25, 47, 3, 19, 8, 18}));
+        System.out.println(insertionSort(new int[]{25, 47, 3, 19, 8, 18}));
     }
 }
