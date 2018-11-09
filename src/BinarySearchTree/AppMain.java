@@ -1,4 +1,4 @@
-package binarysearchtree;
+package BinarySearchTree;
 
 public class AppMain {
     public static void main(String[] args) {

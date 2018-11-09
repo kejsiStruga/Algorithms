@@ -1,4 +1,4 @@
-package heap;
+package Heap;
 
 public class Heap {
     private Node[] heapArray;
@@ -46,5 +46,44 @@ public class Heap {
             parentIdx = (parentIdx-1)/2; // move up
         }
         heapArray[idx] = nodeToInsert;
+    }
+
+    public Node remove() {
+        Node root = heapArray[0];
+        currentSize--;
+        heapArray[0] = heapArray[--currentSize];
+
+        trickleDown(0);
+
+        return root;
+    }
+
+    private void trickleDown(int idx) {
+        int largerChildIdx;
+        Node top = heapArray[idx]; // save last into top variable
+
+        // will run as long as idx is not on the bottom row (at least 1 child)
+        while (idx < currentSize/2) {
+            int leftChildIdx = 2 * idx + 1; // left child idx position
+            int rightChildIdx = leftChildIdx + 1; // right child idx position
+
+            // figure out which child is larger
+            if(rightChildIdx < currentSize &&
+                heapArray[leftChildIdx].getKey() < heapArray[rightChildIdx].getKey()) {
+                largerChildIdx = rightChildIdx;
+            } else {
+                largerChildIdx = leftChildIdx;
+            }
+            if(top.getKey() >= heapArray[largerChildIdx].getKey()) {
+                // successfully made root the largest key
+                break;
+            }
+
+            heapArray[idx] = heapArray[largerChildIdx];
+            idx = largerChildIdx; // how we go down
+        }
+    }
+
+    public void displayHeap() {
     }
 }
