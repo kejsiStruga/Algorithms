@@ -1,5 +1,6 @@
 package BreadthFirstSearch;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Vertex {
@@ -7,10 +8,9 @@ public class Vertex {
     private boolean visited;
     private List<Vertex> neighboursList;
 
-    public Vertex(int data, boolean visited, List<Vertex> neighboursList) {
+    public Vertex(int data) {
         this.data = data;
-        this.visited = visited;
-        this.neighboursList = neighboursList;
+        this.neighboursList = new ArrayList<>();
     }
 
     public int getData() {
@@ -44,5 +44,10 @@ public class Vertex {
                 ", visited=" + visited +
                 ", neighboursList=" + neighboursList +
                 '}';
+    }
+
+    public void addNeighbourVertex(Vertex vertex) {
+
+        this.neighboursList.add(vertex);
     }
 }

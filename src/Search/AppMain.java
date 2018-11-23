@@ -44,23 +44,23 @@ public class AppMain {
         }
     }
 
-    public static String selectionSort(int [] arr) {
-        int min;
-
-        for(int i = 0; i< arr.length-1; i++) {
-            min=i;
-            for (int j = i+1; j< arr.length; j++) {
-                if(arr[j] < arr[min]) {
-                    min = j;
-                }
-            }
-            int temp = arr[i];
-            arr[i] = arr[min];
-            arr[min] = temp;
-        }
-
-        return Arrays.toString(arr);
-    }
+//    public static String selectionSort(int [] arr) {
+//        int min;
+//
+//        for(int i = 0; i< arr.length-1; i++) {
+//            min=i;
+//            for (int j = i+1; j< arr.length; j++) {
+//                if(arr[j] < arr[min]) {
+//                    min = j;
+//                }
+//            }
+//            int temp = arr[i];
+//            arr[i] = arr[min];
+//            arr[min] = temp;
+//        }
+//
+//        return Arrays.toString(arr);
+//    }
 
     public static String insertionSort(int [] arr) {
 
@@ -83,6 +83,6 @@ public class AppMain {
 //        System.out.println(recursiveBinarySearch(0, arr.length-1, arr, 10));
 
 //        System.out.println(selectionSort(new int[]{25, 47, 3, 19, 8, 18}));
-        System.out.println(insertionSort(new int[]{25, 47, 3, 19, 8, 18}));
+//        System.out.println(insertionSort(new int[]{25, 47, 3, 19, 8, 18}));
     }
 }
