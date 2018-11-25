@@ -380,6 +380,47 @@ public class WarmUpChallenges {
         return backNr;
     }
 
+    /**
+     *
+     *
+     * TODO:
+     *
+     * The problem itself is that there are
+     *
+     * N number of eggs and building which has M floors.
+     *
+     * Write an algorithm to find
+     *
+     * the minimum number of drops is required to know the floor
+     * from which if egg is dropped, it will break.
+     *
+     * (usually N=2 and M=100)
+     */
+
+    /**
+     *
+     * Find Duplicates O(1) space complexity & O(n) time complexity
+     *
+     */
+    public static List<Integer> findAllDuplicates(int [] arr) {
+        Set<Integer> resultSet = new HashSet<>();
+
+        for(int i=0; i< arr.length; i++) {
+            int index = Math.abs(arr[i]) - 1;
+            if(arr[index] < 0) {
+                resultSet.add(Math.abs(arr[i]));
+            } else {
+                arr[index] = -arr[index];
+            }
+        }
+
+        for (int i=0 ; i<arr.length; i++) {
+            arr[i] = Math.abs(arr[i]);
+        }
+
+        return new ArrayList<>(resultSet);
+    }
+
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
 //        List<Integer> list1 = new ArrayList<>();
@@ -399,6 +440,8 @@ public class WarmUpChallenges {
 //        System.out.println(isPalindromeNonRecursive("anna"));
 
         System.out.println(reverse(1234));
+
+        System.out.println(findAllDuplicates(new int [] {1, 2, 3, 3, 2}));
     }
 
 
