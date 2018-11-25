@@ -1,11 +1,19 @@
 package Search.mergesort;
 
+/**
+ *
+ * The DA of Merge Sort is that it requires to make a complete copy of the array
+ * the benefit is that it makes far less comparisons than isnertion or selection sort
+ *
+ */
 public class MergeSort {
 
+    @SuppressWarnings("Duplicates")
     public static void sort(int inputArray[]) {
         sort(inputArray, 0, inputArray.length-1);
     }
 
+    @SuppressWarnings("Duplicates")
     public static void sort(int inputArray[], int start, int end) {
         if(end <= start) {
             return;
@@ -14,10 +22,14 @@ public class MergeSort {
         int mid = (start+end)/2;
         sort(inputArray, start, mid);
         sort(inputArray, mid+1, end);
-        // merge sorted results into the inputrrays
+        // merge sorted results into the inputarrays
+
+//        System.out.println(Arrays.toString(inputArray));
+
         merge(inputArray, start, mid, end);
     }
 
+    @SuppressWarnings("Duplicates")
     private static void merge(int[] arr, int start, int mid, int end) {
 
         int tempArray[] = new int[end - start+1];

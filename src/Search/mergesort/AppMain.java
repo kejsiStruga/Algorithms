@@ -13,5 +13,12 @@ public class AppMain {
 
         System.out.println(Arrays.toString(inputArray));
 
+        MergeSort1 mergeSort = new MergeSort1();
+
+        int arr[] = {5, 4, 3, 1, 9, 10};
+
+        mergeSort.sort(arr);
+
+        System.out.println(Arrays.toString(arr));
     }
 }

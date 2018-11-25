@@ -160,6 +160,202 @@ public class WarmUpChallenges {
         scanner.close();
     }
 
-    public static void main(String[] args) {
+    public static void mergeListsMergeSort(int arr1[], int arr2[]) {
+
     }
+
+
+    // Binary search ^^
+    @SuppressWarnings("Duplicates")
+    public static int  binarySearch1(int [] arr, int x) {
+
+        int p = 0;
+        int r = arr.length - 1;
+
+
+        while( p <= r) {
+
+            // Find the middle point
+            int mid = (p+r) / 2;
+
+            if(x < arr[mid]) {
+                r = mid-1;
+            } else if(x > arr[mid]) {
+                r = mid+1;
+            } else {
+                return r;
+            }
+
+        }
+
+        return -1;
+    }
+
+    public static int recursiveLinearSearch(int arr[], int start, int x) {
+
+        if(start >= arr.length) {
+            return -1;
+        } else if(arr[start] == x) {
+            return start;
+        } else {
+            // make the recursive call
+            return recursiveLinearSearch(arr, start+1, x);
+        }
+
+    }
+
+
+    @SuppressWarnings("Duplicates")
+    public static int recursiveBinarySearch(int p, int r, int [] arr, int x) {
+
+        // find the middle
+        int mid = (p+r) / 2;
+
+        // base case is if the beginning index is greater than the end index
+        if(p>r) {
+            return -1;
+        } else if(x < arr[mid]) { // compare with the middle element
+            // make the recursive call if on the left
+            return recursiveBinarySearch(p, mid+1, arr, x);
+        } else if(x > arr[mid]) {
+            // make the recursive call on the right
+            return recursiveBinarySearch(mid+1, r, arr, x);
+        } else {
+            // return the MIDDLE POINT!!
+            return mid;
+        }
+    }
+
+    @SuppressWarnings("Duplicates")
+    public static void insertionSort(int [] arr) {
+
+        // Start from 1 so that I can compare with the previous element
+        for (int i = 1; i < arr.length; i++) {
+
+            int element = arr[i];
+            int j = i - 1;
+
+            while (j >= 0 && arr[j] > element) {
+                arr[j + 1] = arr[j]; // swap previous with current
+                j--; // => -1
+            }
+            arr[j + 1] = element; // swap previous with current
+
+        }
+
+    }
+
+    @SuppressWarnings("Duplicates")
+    private static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2) {
+        // Append list2 to list1
+        int list2Size = list2.size();
+        for (int i=0; i< list2Size; i++) {
+            list1.add(list2.get(i));
+        }
+
+        int start = 0;
+        int end = list1.size()-1;
+        int mid = (start+end)/2;
+
+        int tempArray[] = new int[end - start+1];
+
+        // index counter for the left side of the array
+        int leftIdx = start;
+        // index counter for the right side of the array
+        int rightIdx = mid+1;
+
+        int k = 0;
+
+        while (leftIdx<=mid && rightIdx<=end) {
+            if(list1.get(leftIdx) < list1.get(rightIdx)) {
+                tempArray[k] = list1.get(leftIdx);
+                leftIdx++;
+            } else {
+                tempArray[k] = list1.get(rightIdx);
+                rightIdx++;
+            }
+            k++;
+        } // done sorting! So both the right and left side of the sub-arr are sorted
+
+        if(leftIdx <= mid) { // consider the right side done being sorted, left must be sorted already
+            while (leftIdx<=mid) {
+                tempArray[k] = list1.get(leftIdx);
+                leftIdx++;
+                k++;
+            }
+        } else if(rightIdx <= end) {
+            while (rightIdx<=end) {
+                tempArray[k] = list1.get(rightIdx);
+                rightIdx++;
+                k++;
+            }
+        }
+        // copy over the temp array into the appropriate slots of arr
+        for(int i=0; i<tempArray.length; i++) {
+            list1.set(start+i, tempArray[i]);
+        }
+
+        return list1;
+    }
+
+    @SuppressWarnings("Duplicates")
+    public static void main(String[] args) {
+
+        List<Integer> list1 = new ArrayList<>();
+        list1.add(1);
+        list1.add(5);
+        list1.add(10);
+
+        List<Integer> list2 = new ArrayList<>();
+        list1.add(3);
+        list1.add(4);
+        list1.add(12);
+
+        System.out.println(mergeLists(list1,list2));
+
+        int arr [] = new int [] {4, 1, 3, 2};
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

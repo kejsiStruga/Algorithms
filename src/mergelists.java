@@ -49,6 +49,7 @@ public class mergelists {
     }
 
 
+    @SuppressWarnings("Duplicates")
     static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2) {
         // Merge two lists together, so that later can perform the sorting
         int list2Size = list2.size();
@@ -75,7 +76,7 @@ public class mergelists {
         return list1;
     }
 
-
+    @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
 
         List<Integer> list1 = new ArrayList<Integer>();

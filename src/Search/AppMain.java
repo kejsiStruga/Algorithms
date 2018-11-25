@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class AppMain {
 
+    @SuppressWarnings("Duplicates")
     public static int binarySearch(int [] a, int x) {
         int p = 0;
         int r = a.length - 1;
@@ -27,7 +28,7 @@ public class AppMain {
             return recursiveLinearSearch(arr, i+1, x);
         }
     }
-
+    @SuppressWarnings("Duplicates")
     public static int recursiveBinarySearch(int p, int r, int [] arr, int x) {
 
         int q = (p+r) / 2;
@@ -62,6 +63,7 @@ public class AppMain {
 //        return Arrays.toString(arr);
 //    }
 
+    @SuppressWarnings("Duplicates")
     public static String insertionSort(int [] arr) {
 
         for (int i=1; i<arr.length; i++) {
