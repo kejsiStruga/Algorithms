@@ -31,7 +31,6 @@ public class MergeSort {
 
     @SuppressWarnings("Duplicates")
     private static void merge(int[] arr, int start, int mid, int end) {
-
         int tempArray[] = new int[end - start+1];
 
         // index counter for the left side of the array
@@ -69,7 +68,6 @@ public class MergeSort {
         for(int i=0; i<tempArray.length; i++) {
             arr[start+i] = tempArray[i];
         }
-
     }
 
 }

@@ -298,22 +298,59 @@ public class WarmUpChallenges {
         return list1;
     }
 
+    /**
+     *
+     * A palindrome is a string that reads the same forward and backward
+     *
+     * radar or madam
+     * @param str
+     */
+    public static boolean isPalindrome(String str) {
+        // str = [ a n n a ];
+        str = str.toLowerCase();
+
+        if(str.length()==1 || str.length()==0) {
+            return true;
+        }
+
+        if(str.charAt(0) == str.charAt(str.length()-1)) {
+            return isPalindrome(str.substring(1, str.length()-1));
+        }
+
+        return false;
+    }
+
+    public static boolean isPalindromeNonRecursive(String str) {
+
+        if(str.length() == 0 || str.length() == 1) {
+            return true;
+        }
+
+        for(int i=0; i<str.length()/2; i++) {
+            if(str.charAt(i) != str.charAt(str.length()-1-i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
+//        List<Integer> list1 = new ArrayList<>();
+//        list1.add(1);
+//        list1.add(5);
+//        list1.add(10);
+//
+//        List<Integer> list2 = new ArrayList<>();
+//        list1.add(3);
+//        list1.add(4);
+//        list1.add(12);
+//
+//        System.out.println(mergeLists(list1,list2));
+//
+//        int arr [] = new int [] {4, 1, 3, 2};
 
-        List<Integer> list1 = new ArrayList<>();
-        list1.add(1);
-        list1.add(5);
-        list1.add(10);
-
-        List<Integer> list2 = new ArrayList<>();
-        list1.add(3);
-        list1.add(4);
-        list1.add(12);
-
-        System.out.println(mergeLists(list1,list2));
-
-        int arr [] = new int [] {4, 1, 3, 2};
+        System.out.println(isPalindromeNonRecursive("anna"));
     }
 
 
