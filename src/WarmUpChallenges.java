@@ -334,6 +334,52 @@ public class WarmUpChallenges {
         return true;
     }
 
+    public static int reverse1(int nr) {
+
+        int reversed=0;
+        int remainder; // %
+
+        while (nr > 0) {
+
+            remainder = nr % 10;
+            nr = nr/10;
+            reversed = reversed*10 + remainder;
+        }
+
+        return reversed;
+    }
+
+    public static int reverse(int nr) {
+        int reversed = 0;
+        int remainder;
+
+        while(nr > 0) {
+            remainder = nr % 10;
+            System.out.println("remainder: " + remainder);
+            nr = nr / 10;
+            System.out.println("nr: " + nr);
+            reversed = reversed * 10 + remainder;
+            System.out.println("reversed: " + reversed);
+        }
+
+        return reversed;
+    }
+
+    public static int reverseNr(int nr) {
+
+        String strNr = String.valueOf(nr);
+
+        StringBuilder newString = new StringBuilder();
+
+        for(int i=strNr.length()-1; i>=0; i--) {
+            newString.append(strNr.charAt(i));
+        }
+
+        int backNr = Integer.parseInt(newString.toString());
+
+        return backNr;
+    }
+
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
 //        List<Integer> list1 = new ArrayList<>();
@@ -350,7 +396,9 @@ public class WarmUpChallenges {
 //
 //        int arr [] = new int [] {4, 1, 3, 2};
 
-        System.out.println(isPalindromeNonRecursive("anna"));
+//        System.out.println(isPalindromeNonRecursive("anna"));
+
+        System.out.println(reverse(1234));
     }
 
 
