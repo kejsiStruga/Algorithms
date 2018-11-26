@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Stream;
 
 public class WarmUpChallenges {
 
@@ -432,8 +433,39 @@ public class WarmUpChallenges {
 
         Iterator<String> iterator = list.iterator();
         while(iterator.hasNext()) {
-            String someString = iterator.next();
-            System.out.println(someString);
+            System.out.println(iterator.next());
+        }
+    }
+
+    public static void setTest() {
+        Set<String> set = new HashSet<>();
+
+        String str1 = "a String";
+        set.add(str1);
+
+        Iterator<String> iterator = set.iterator();
+        while(iterator.hasNext()) {
+            String aString = iterator.next();
+            System.out.println(aString);
+        }
+    }
+
+    public static void mapTest() {
+        Map<Integer, String> map = new HashMap<>();
+
+        Integer key1 = new Integer(123);
+        String value1 = "value 1";
+
+        map.put(key1, value1);
+
+        String value1_1 = map.get(key1);
+
+        Iterator<Integer> keyIterator = map.keySet().iterator();
+
+        while(keyIterator.hasNext()) {
+            Integer aKey = keyIterator.next();
+            String aValue = map.get(aKey);
+            System.out.println(aValue);
         }
     }
 
@@ -460,6 +492,8 @@ public class WarmUpChallenges {
         System.out.println(findAllDuplicates(new int [] {1, 2, 3, 3, 2}));
 
         iteratorTest();
+
+        setTest();
     }
 
 
