@@ -421,6 +421,22 @@ public class WarmUpChallenges {
         return new ArrayList<>(resultSet);
     }
 
+    public static void iteratorTest() {
+        String str1 = "first String";
+        String str2 = "second String";
+
+        List<String> list = new ArrayList<>();
+
+        list.add(str1);
+        list.add(str2);
+
+        Iterator<String> iterator = list.iterator();
+        while(iterator.hasNext()) {
+            String someString = iterator.next();
+            System.out.println(someString);
+        }
+    }
+
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
 //        List<Integer> list1 = new ArrayList<>();
@@ -442,6 +458,8 @@ public class WarmUpChallenges {
         System.out.println(reverse(1234));
 
         System.out.println(findAllDuplicates(new int [] {1, 2, 3, 3, 2}));
+
+        iteratorTest();
     }
 
 
