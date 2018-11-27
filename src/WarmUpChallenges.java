@@ -469,6 +469,15 @@ public class WarmUpChallenges {
         }
     }
 
+    public void iterateHashMap(Map mp) {
+        Iterator it = mp.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry pair = (Map.Entry)it.next();
+            System.out.println(pair.getKey() + " = " + pair.getValue());
+            it.remove(); // avoids a ConcurrentModificationException
+        }
+    }
+
     @SuppressWarnings("Duplicates")
     public static void main(String[] args) {
 //        List<Integer> list1 = new ArrayList<>();

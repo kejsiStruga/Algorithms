@@ -78,6 +78,31 @@ public class AppMain {
         return Arrays.toString(arr);
     }
 
+    public static String bubbleSort(int [] arr) {
+
+        int len = arr.length;
+
+        // loop through all elements, first round, until n-2
+        for(int k=0; k<len-2; k++) {
+
+            // second round; we loop from the beginning until n-k-1
+            for(int i=0; i<len-k-1; i++) {
+
+                // compare and swap if condition sufficient
+                if(arr[i] > arr[i+1]) {
+                    int temp = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = temp;
+                }
+
+            }
+
+        }
+
+        return Arrays.toString(arr);
+
+    }
+
     public static void main(String[] args) {
 //        System.out.println(binarySearch(new int[] {1,2,3,4,5,6,7,8,9}, 10));
 //        int [] arr = {1,2,3,4,5,6,7,8,9};
@@ -85,6 +110,29 @@ public class AppMain {
 //        System.out.println(recursiveBinarySearch(0, arr.length-1, arr, 10));
 
 //        System.out.println(selectionSort(new int[]{25, 47, 3, 19, 8, 18}));
-//        System.out.println(insertionSort(new int[]{25, 47, 3, 19, 8, 18}));
+        System.out.println(insertionSort(new int[]{25, 47, 3, 19, 8, 18}));
+        System.out.println(bubbleSort(new int[]{25, 47, 3, 19, 8, 18}));
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
