@@ -400,7 +400,7 @@ public class WarmUpChallenges {
 
     /**
      *
-     * Find Duplicates O(1) space complexity & O(n) time complexity
+     * Find Duplicates: O(1) space complexity & O(n) time complexity
      *
      */
     public static List<Integer> findAllDuplicates(int [] arr) {
