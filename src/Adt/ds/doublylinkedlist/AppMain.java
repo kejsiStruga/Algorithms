@@ -20,6 +20,7 @@ public class AppMain {
         linkedList.deleteKey(6);
 
         linkedList.insertAfter(7,8);
+        linkedList.insertBefore(3,9);
         linkedList.displayForward();
         linkedList.displayBackward();
     }
