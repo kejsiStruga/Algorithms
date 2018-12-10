@@ -75,6 +75,32 @@ public class DoublyLinkedList {
     }
 
     // assume non-empty list
+    public boolean insertBefore(int key, int data) {
+        Node current = first;
+        while (current.data != key) {
+            current = current.next;
+            if (current == null) {
+                return false;
+            }
+        }
+        Node node = new Node();
+        node.data = data;
+
+        if (current == first) {
+            current.previous = null;
+            first = node;
+        } else {
+            node.previous = current.previous;
+            current.previous.next = node;
+        }
+
+        node.next = current;
+        current.previous = node;
+
+        return true;
+    }
+
+    // assume non-empty list
     public boolean insertAfter(int key, int data) {
         Node current = first; // start from the beginning of the list
         while (current.data != key) { // as long as we have not found the key in a particular node
