@@ -2,6 +2,11 @@ package Strings;
 
 public class StringImmuatability {
 
+
+    public static String hello(String s){
+        return "hello " + s;
+    }
+
     public static void main(String[] args) {
         String str1 = "Value1";
         String str2 = str1;
