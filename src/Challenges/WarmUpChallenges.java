@@ -1,3 +1,5 @@
+package Challenges;
+
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -6,20 +8,18 @@ public class WarmUpChallenges {
     public static void misc(){
         Scanner scanner = new Scanner(System.in).useDelimiter("\\s");
 
-        int M=0;
+        int M = scanner.nextInt();
 
         int c = 0;
 
         List<Integer> L = new ArrayList<>();
-
-        M = scanner.nextInt();
 
         // flush scanner
         scanner.nextLine();
 
         while(scanner.hasNextInt() && c < 1024) {
             // suppose user will always input an integer!
-            Integer nr = scanner.nextInt();
+            int nr = scanner.nextInt();
 
             if(nr >= 0 && nr <= (Math.pow(2,32)-1)) {
                 L.add(nr);
@@ -453,7 +453,7 @@ public class WarmUpChallenges {
     public static void mapTest() {
         Map<Integer, String> map = new HashMap<>();
 
-        Integer key1 = new Integer(123);
+        Integer key1 = Integer.valueOf(123);
         String value1 = "value 1";
 
         map.put(key1, value1);

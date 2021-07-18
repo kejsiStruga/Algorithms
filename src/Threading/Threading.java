@@ -1,3 +1,5 @@
+package Threading;
+
 class Threading implements Runnable {
     private String threadName;
 

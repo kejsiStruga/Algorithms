@@ -1,3 +1,5 @@
+package Misc;
+
 import java.util.*;
 
 public class Misc {
@@ -6,7 +8,7 @@ public class Misc {
 
         Scanner scan = new Scanner(System.in);
 
-        HashMap<String, String> map = new HashMap<String, String>();
+        HashMap<String, String> map = new HashMap<>();
 
         System.out.println("====================================");
 
@@ -29,9 +31,8 @@ public class Misc {
             }
         }
 
-        Iterator it = map.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry)it.next();
+        while (map.entrySet().iterator().hasNext()) {
+            Map.Entry pair = map.entrySet().iterator().next();
             System.out.println(pair);
         }
 
